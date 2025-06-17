@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музей истории</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hall {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .hall-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+            text-align: center;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .event-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 2px solid #ffd700;
+        }
+        
+        .event-content {
+            padding: 15px;
+        }
+        
+        .event-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #ffd700;
+        }
+        
+        .event-date {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+        
+        .keeper-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid #ffd700;
+            border-radius: 20px;
+            padding: 5px 12px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #ff8c00, #ff0080);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s ease;
+        }
+        
+        .btn:hover {
+            transform: scale(1.03);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Исторический Музей</h1>
+            <p>Дворец памяти для изучения дат истории России</p>
+        </header>
+        
+        <div class="hall">
+            <h2 class="hall-title">Зал Древней Руси</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <img src="https://via.placeholder.com/300x180?text=Призвание+варягов" alt="Призвание варягов" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Призвание варягов</h3>
+                        <p class="event-date">862 год</p>
+                        <div>
+                            <span class="keeper-badge">Рюрик</span>
+                            <span class="keeper-badge">Синеус</span>
+                            <span class="keeper-badge">Трувор</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <img src="https://via.placeholder.com/300x180?text=Крещение+Руси" alt="Крещение Руси" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Крещение Руси</h3>
+                        <p class="event-date">988 год</p>
+                        <div>
+                            <span class="keeper-badge">Владимир</span>
+                            <span class="keeper-badge">Византия</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <img src="https://via.placeholder.com/300x180?text=Ледовое+побоище" alt="Ледовое побоище" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Ледовое побоище</h3>
+                        <p class="event-date">1242 год</p>
+                        <div>
+                            <span class="keeper-badge">Александр Невский</span>
+                            <span class="keeper-badge">Тевтонцы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn" id="start-course">Начать обучение</button>
+        
+        <footer>
+            <p>Система "Хранители времени" • Экспериментальная версия</p>
+            <p>Ваши отзывы помогут нам улучшить продукт!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Инициализация Telegram Web App
+        const tg = window.Telegram.WebApp;
+        
+        // Развернуть на весь экран
+        tg.expand();
+        
+        // Показать основную кнопку
+        tg.MainButton.setText("Вернуться в бота")
+        tg.MainButton.show();
+        
+        // Обработчик основной кнопки
+        tg.MainButton.onClick(() => {
+            tg.close();
+        });
+        
+        // Обработчик кнопки "Начать обучение"
+        document.getElementById('start-course').addEventListener('click', () => {
+            tg.showPopup({
+                title: 'Курс начат!',
+                message: 'Первые события уже добавлены в ваш дворец памяти',
+                buttons: [{ id: 'ok', type: 'ok' }]
+            });
+        });
+        
+        // Обработчики карточек событий
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.event-title').textContent;
+                tg.showPopup({
+                    title: title,
+                    message: 'Подробная информация о событии и методика запоминания',
+                    buttons: [{ id: 'close', type: 'close' }]
+                });
+            });
+        });
+    </script>
+</body>
+</html>
